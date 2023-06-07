@@ -1,4 +1,4 @@
-# laurenwilner.github.io
+# Lauren Wilner
 
-Personal website
+Hello world!
 
