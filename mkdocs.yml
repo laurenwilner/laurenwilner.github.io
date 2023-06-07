@@ -1,6 +1,10 @@
-site_name: laurenwilner.github.io
+site_name: Lauren Wilner
 nav:
   - Home: index.md
+  - Presentations:
+      - SER2023: presentations/ser_2023.md
+  - R Packages:
+      - walkboutr: r_packages/walkboutr.md
 theme:
   name: material
   features:
