@@ -1,5 +1,7 @@
 [Google Scholar](https://scholar.google.com/citations?hl=en&user=rLX9LVYAAAAJ&view_op=list_works&sortby=pubdate)
 
+Lauren Blair Wilner, Weipeng Zhou, Phil Hurvitz, Anne Moudon, Bumjoon Kang, Brian Saelens, Jim Phuong, Matthew Dekker, Stephen J Mooney. walkboutr: Extracting walk bouts from GPS and accelerometry data for physical activity research. R Journal. (under review).
+
 Su Z, Zhiyong Z, Hay S, Liu Y, Li S, Chen H, Naghavi M, Zimmerman MS, Martin GR, Wilner LB, Sable CA, Murray CJL, Kassebaum NJ, Patton GC, Zhang H. **Global, regional, and national time trends in mortality for congenital heart disease, 1990–2019: An age-period-cohort analysis for the Global Burden of Disease 2019 study**. eClinicalMedicine. January 2022. doi: [10.1016/j.eclinm.2021.101249](https://doi.org/10.1016/j.eclinm.2021.101249)
 
 Brennan J, Bannick M, Kassebaum N, Wilner L, Thomson A, Aravkin A, Zheng P. **Analysis and Methods to Mitigate Effects of Under-reporting in Count Data**. arXiv. 28 Sep 2021. doi: [10.48550/arXiv.2109.12247](https://doi.org/10.48550/arXiv.2109.12247)
