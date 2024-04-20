@@ -1,12 +1,13 @@
 **Git and GitHub for Public Health**
 
-*(workshop development in progress)*
+*(workshop development in progress in collaboration with Dr. Corinne Riddell (UC Berkeley))*
+<br/> 
 <br/>
 
 
 This workshop will be taught at the following locations:  
 
-- California Department for Public Health (May 2024)
+- California Department for Public Health (May 2024)  
 - Society for Epidemiologic Research (SER) conference (June 2024)
 
 Open source materials for this workshop can be found [here](https://git-for-public-health.netlify.app/).
