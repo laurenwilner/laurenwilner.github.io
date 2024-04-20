@@ -7,6 +7,9 @@ nav:
   - R Packages:
       - walkboutr: r_packages/walkboutr.md
   - Publications: publications/publications.md
+  - Teaching: 
+      - Courses: teaching/courses.md
+      - Workshops: teaching/workshops.md
 theme:
   name: material
   features:
