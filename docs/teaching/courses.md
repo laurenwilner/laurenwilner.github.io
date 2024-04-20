@@ -4,7 +4,9 @@ Tufts University School of Medicine, Boston, MA.
 Graduate level, Teaching Assistant
 2014-2015
 
-Developed course materials and taught Stata lab sections for all MPH and DrPH Biostatistics students.
+Developed course materials and taught Stata lab sections for all MPH and DrPH Biostatistics students with Dr. David Tybor.
+
+<br/>
 
 **Data Management for Public Health**
 
