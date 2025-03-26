@@ -1,3 +1,3 @@
-[Download CV](../_artifacts/cv.pdf)
+[Download CV](../_artifacts/wilner_cv.pdf)
 
 

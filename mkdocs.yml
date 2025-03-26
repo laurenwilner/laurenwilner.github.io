@@ -3,9 +3,15 @@ nav:
   - Home: index.md
   - CV: CV/cv.md
   - Presentations:
+      - Cascadia 2025: presentations/cascadia_2025.md
+      - ISEE 2024: presentations/isee_2024.md      
       - SER 2023: presentations/ser_2023.md
-  - R Packages:
+      - ICBD 2020: presentations/icbd_2020.md
+      - EB 2017: presentations/eb_2017.md
+      - EB 2015: presentations/eb_2015.md
+  - Software Packages:
       - walkboutr: r_packages/walkboutr.md
+      - Pop_Exp: packages/pop_exp.md
   - Publications: publications/publications.md
   - Teaching: 
       - Courses: teaching/courses.md
