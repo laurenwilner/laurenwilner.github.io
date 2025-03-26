@@ -4,11 +4,11 @@ nav:
   - CV: CV/cv.md
   - Presentations:
       - Cascadia 2025: presentations/cascadia_2025.md
-      - ISEE 2024: presentations/isee_2024.md      
-      - SER 2023: presentations/ser_2023.md
-      - ICBD 2020: presentations/icbd_2020.md
-      - EB 2017: presentations/eb_2017.md
-      - EB 2015: presentations/eb_2015.md
+      - International Society for Environmental Epidemiology (ISEE) 2024: presentations/isee_2024.md      
+      - Society for Epidemiologic Research (SER) 2023: presentations/ser_2023.md
+      - International Conference on Birth Defects and Disabilities in the Developing World (ICBD) 2020: presentations/icbd_2020.md
+      - Experimental Biology (EB) 2017: presentations/eb_2017.md
+      - Experimental Biology (EB) 2015: presentations/eb_2015.md
   - Software Packages:
       - walkboutr: r_packages/walkboutr.md
       - Pop_Exp: packages/pop_exp.md
