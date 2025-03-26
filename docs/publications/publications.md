@@ -1,21 +1,20 @@
 [Google Scholar](https://scholar.google.com/citations?hl=en&user=rLX9LVYAAAAJ&view_op=list_works&sortby=pubdate)
 
-Lauren Blair Wilner, Weipeng Zhou, Phil Hurvitz, Anne Moudon, Bumjoon Kang, Brian Saelens, Jim Phuong, Matthew Dekker, Stephen J Mooney. walkboutr: Extracting walk bouts from GPS and accelerometry data for physical activity research. Under review at the Population Dynamics Lab. March 2025.
+Lauren Blair Wilner, Weipeng Zhou, Phil Hurvitz, Anne Moudon, Bumjoon Kang, Brian Saelens, Jim Phuong, Matthew Dekker, Stephen J Mooney. **walkboutr: Extracting walk bouts from GPS and accelerometry data for physical activity research**. Under review at the Population Dynamics Lab. March 2025.
 
-Gordon M, Steiger BB, Northrop AJ, McBrien H, Shea B, Meltzer GY, Bedi NS, Blake EM, Wilner LB, Piepmeier L, Benmarhnia T, Braun D, Casey JA. Two decades of United States wildfire burn zone disaster data, 2000-2019. Under review at Nature. March 2025.
+Gordon M, Steiger BB, Northrop AJ, McBrien H, Shea B, Meltzer GY, Bedi NS, Blake EM, Wilner LB, Piepmeier L, Benmarhnia T, Braun D, Casey JA. **Two decades of United States wildfire burn zone disaster data, 2000-2019**. Under review at Nature. March 2025.
 
-Casey JA, Gu YM, Schwarz L, Frankland TB, Wilner LB, McBrien H, Flores NM, Dey AK, Lee GS, Chen C, Benmarhnia T. The 2025 Los Angeles Wildfires and Outpatient Acute Healthcare Utilization. medRxiv. 2025:2025-03.
+Casey JA, Gu YM, Schwarz L, Frankland TB, Wilner LB, McBrien H, Flores NM, Dey AK, Lee GS, Chen C, Benmarhnia T. **The 2025 Los Angeles Wildfires and Outpatient Acute Healthcare Utilization**. medRxiv. 2025:2025-03.
 
-Do V, Wilner LB, Flores NM, McBrien H, Northrop AJ, Casey JA. Spatiotemporal patterns of individual and multiple simultaneous severe weather events co-occurring with power outages in the United States, 2018–2020. PLOS Climate. 2025 Jan 22;4(1):e0000523.
+Do V, Wilner LB, Flores NM, McBrien H, Northrop AJ, Casey JA. **Spatiotemporal patterns of individual and multiple simultaneous severe weather events co-occurring with power outages in the United States, 2018–2020**. PLOS Climate. 2025 Jan 22;4(1):e0000523.
 
-Dieleman JL, Weil M, Beauchamp M, et al. Drivers of Variation in Health Care Spending Across US Counties. JAMA Health Forum. 2025;6(2):e245220. doi:10.1001/jamahealthforum.2024.5220
+Dieleman JL, Weil M, Beauchamp M, et al. **Drivers of Variation in Health Care Spending Across US Counties**. JAMA Health Forum. 2025;6(2):e245220. doi:10.1001/jamahealthforum.2024.5220
 
-Dieleman JL, Beauchamp M, Crosby SW, et al. Tracking US Health Care Spending by Health Condition and County. JAMA. 2025;333(12):1051–1061. doi:10.1001/jama.2024.26790
+Dieleman JL, Beauchamp M, Crosby SW, et al. **Tracking US Health Care Spending by Health Condition and County**. JAMA. 2025;333(12):1051–1061. doi:10.1001/jama.2024.26790
 
-Global, regional, and national burden of disorders affecting the nervous system, 1990–2021: a systematic analysis for the Global Burden of Disease Study 2021
-Steinmetz, Jaimie D et al. The Lancet Neurology, Volume 23, Issue 4, 344 - 381
+**Global, regional, and national burden of disorders affecting the nervous system, 1990–2021: a systematic analysis for the Global Burden of Disease Study 2021**. Steinmetz, Jaimie D et al. The Lancet Neurology, Volume 23, Issue 4, 344 - 381.
 
-Northrop AJ, Do V, Flores NM, Wilner LB, Sheffield PE, Casey JA. Power Outages: An Underappreciated Risk Factor for Children's Carbon Monoxide Poisoning. Pediatrics. In press.
+Northrop AJ, Do V, Flores NM, Wilner LB, Sheffield PE, Casey JA. **Power Outages: An Underappreciated Risk Factor for Children's Carbon Monoxide Poisoning**. Pediatrics. In press.
 
 Dieleman J. Estimating US Healthcare Spending By Disease and County. In 2023 World Congress on Health Economics 2023 Jul 10. IHEA.
 
