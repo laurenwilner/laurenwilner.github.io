@@ -10,7 +10,7 @@ nav:
       - Experimental Biology (EB) 2017: presentations/eb_2017.md
       - Experimental Biology (EB) 2015: presentations/eb_2015.md
   - Software Packages:
-      - walkboutr: r_packages/walkboutr.md
+      - walkboutr: packages/walkboutr.md
       - Pop_Exp: packages/pop_exp.md
   - Publications: publications/publications.md
   - Teaching: 
