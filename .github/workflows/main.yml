@@ -5,12 +5,10 @@ on:
     branches: [ main ]
     paths:
       - 'docs/**'
+      - 'cv_tex/**'
       - 'mkdocs.yml'
       - '.github/workflows/main.yml'
   workflow_dispatch:
-  # Optional: Check for CV updates daily
-  schedule:
-    - cron: '0 0 * * *'  # Daily at midnight UTC
 
 permissions:
   contents: write
@@ -21,13 +19,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
-      - name: Checkout CV repository
-        uses: actions/checkout@v3
-        with:
-          repository: laurenwilner/cv
-          path: cv-source
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python 3
         uses: actions/setup-python@v4
@@ -48,8 +39,8 @@ jobs:
 
       - name: Compile CV
         run: |
-          cd cv-source
-          echo "Contents of cv-source directory:"
+          cd cv_tex
+          echo "Contents of cv_tex directory:"
           ls -la
           echo "Looking for .tex files:"
           find . -name "*.tex" -type f
