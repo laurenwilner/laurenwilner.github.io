@@ -1,34 +1,3 @@
-# name: Docs
-
-# on:
-#   push:
-#     branches: [ main ]
-#     paths:
-#       - 'docs/**'
-#       - 'mkdocs.yml'
-#       - '.github/workflows/main.yml'
-
-#   # Allows you to run this workflow manually from the Actions tab
-#   workflow_dispatch:
-
-# permissions:
-#   contents: write
-
-# jobs:
-#   deploy:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Checkout repository
-#         uses: actions/checkout@v3
-
-#       - name: Set up Python 3
-#         uses: actions/setup-python@v4
-#         with:
-#           python-version: "3.10"
-
-#       - run: pip install mkdocs-material mkdocs-table-reader-plugin
-#       - run: mkdocs gh-deploy --force
-
 name: Docs
 
 on:
@@ -76,6 +45,7 @@ jobs:
             texlive-bibtex-extra \
             texlive-latex-recommended \
             biber
+            pandoc
 
       - name: Compile CV
         run: |
@@ -115,6 +85,14 @@ jobs:
             cat "${BIB_NAME}.log" | tail -50 || true
             exit 1
           fi
+
+          # Convert LaTeX to HTML using pandoc
+          echo "Converting LaTeX to HTML..."
+          pandoc "$MAIN_TEX" \
+            --from=latex \
+            --to=html \
+            --mathjax \
+            --output=../docs/CV/cv_content.html || echo "WARNING: HTML conversion failed"
 
       - name: Install MkDocs dependencies
         run: pip install mkdocs-material mkdocs-table-reader-plugin
