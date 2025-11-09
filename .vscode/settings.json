@@ -1,0 +1,52 @@
+{
+  // LaTeX Workshop settings for compiling CV
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "Compile CV with Biber",
+      "tools": [
+        "pdflatex",
+        "biber",
+        "pdflatex",
+        "pdflatex"
+      ]
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "pdflatex",
+      "command": "pdflatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "biber",
+      "command": "biber",
+      "args": [
+        "%DOCFILE%"
+      ],
+      "env": {}
+    }
+  ],
+  "latex-workshop.latex.autoClean.run": "onBuilt",
+  "latex-workshop.latex.clean.fileTypes": [
+    "*.aux",
+    "*.bbl",
+    "*.blg",
+    "*.bcf",
+    "*.log",
+    "*.out",
+    "*.run.xml",
+    "*.toc"
+  ],
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.latex.rootFile": "cv_tex/cv.tex",
+  "files.associations": {
+    "*.tex": "latex"
+  }
+}
+
