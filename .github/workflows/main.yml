@@ -34,7 +34,7 @@ jobs:
         with:
           python-version: "3.10"
 
-      - name: Install LaTeX
+      - name: Install LaTeX and pandoc
         run: |
           sudo apt-get update
           sudo apt-get install -y \
@@ -44,7 +44,7 @@ jobs:
             texlive-fonts-extra \
             texlive-bibtex-extra \
             texlive-latex-recommended \
-            biber
+            biber \
             pandoc
 
       - name: Compile CV
