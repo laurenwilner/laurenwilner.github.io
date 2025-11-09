@@ -34,7 +34,7 @@ jobs:
         with:
           python-version: "3.10"
 
-      - name: Install LaTeX and pandoc
+      - name: Install LaTeX
         run: |
           sudo apt-get update
           sudo apt-get install -y \
@@ -44,8 +44,7 @@ jobs:
             texlive-fonts-extra \
             texlive-bibtex-extra \
             texlive-latex-recommended \
-            biber \
-            pandoc
+            biber
 
       - name: Compile CV
         run: |
@@ -85,14 +84,6 @@ jobs:
             cat "${BIB_NAME}.log" | tail -50 || true
             exit 1
           fi
-
-          # Convert LaTeX to HTML using pandoc
-          echo "Converting LaTeX to HTML..."
-          pandoc "$MAIN_TEX" \
-            --from=latex \
-            --to=html \
-            --mathjax \
-            --output=../docs/CV/cv_content.html || echo "WARNING: HTML conversion failed"
 
       - name: Install MkDocs dependencies
         run: pip install mkdocs-material mkdocs-table-reader-plugin
