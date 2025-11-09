@@ -1,15 +1,5 @@
-<div id="cv-content"></div>
+<iframe src="/_artifacts/wilner_cv.pdf" width="100%" height="800px" style="border: none;">
+  <p>Your browser does not support PDFs. <a href="/_artifacts/wilner_cv.pdf">Download the CV</a> instead.</p>
+</iframe>
 
-<script>
-fetch('/CV/cv_content.html')
-  .then(r => r.ok ? r.text() : Promise.reject())
-  .then(html => {
-    document.getElementById('cv-content').innerHTML = html;
-  })
-  .catch(() => {
-    document.getElementById('cv-content').innerHTML = 
-      '<iframe src="/_artifacts/wilner_cv.pdf" width="100%" height="800px" style="border: none;"></iframe>';
-  });
-</script>
-
-[Download PDF version](/_artifacts/wilner_cv.pdf)
+[Download CV](/_artifacts/wilner_cv.pdf)
