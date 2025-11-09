@@ -73,16 +73,30 @@ jobs:
       - name: Compile CV
         run: |
           cd cv-source
+          echo "Contents of cv-source directory:"
+          ls -la
+          echo "Looking for .tex files:"
+          find . -name "*.tex" -type f
           # Find and compile the main .tex file
           MAIN_TEX=$(find . -name "*.tex" -type f | head -n 1)
-          if [ -n "$MAIN_TEX" ]; then
-            pdflatex -interaction=nonstopmode "$MAIN_TEX" || true
-            pdflatex -interaction=nonstopmode "$MAIN_TEX" || true  # Run twice for references
-            # Copy the compiled PDF
-            PDF_NAME=$(basename "$MAIN_TEX" .tex).pdf
-            if [ -f "$PDF_NAME" ]; then
-              cp "$PDF_NAME" ../docs/_artifacts/wilner_cv.pdf
-            fi
+          if [ -z "$MAIN_TEX" ]; then
+            echo "ERROR: No .tex file found!"
+            exit 1
+          fi
+          echo "Found main .tex file: $MAIN_TEX"
+          # Compile (remove || true to see actual errors)
+          pdflatex -interaction=nonstopmode "$MAIN_TEX"
+          pdflatex -interaction=nonstopmode "$MAIN_TEX"  # Run twice for references
+          # Copy the compiled PDF
+          PDF_NAME=$(basename "$MAIN_TEX" .tex).pdf
+          echo "Looking for PDF: $PDF_NAME"
+          if [ -f "$PDF_NAME" ]; then
+            echo "PDF found! Copying to docs/_artifacts/wilner_cv.pdf"
+            cp "$PDF_NAME" ../docs/_artifacts/wilner_cv.pdf
+            ls -lh ../docs/_artifacts/wilner_cv.pdf
+          else
+            echo "ERROR: PDF not found after compilation!"
+            exit 1
           fi
 
       - name: Install MkDocs dependencies
