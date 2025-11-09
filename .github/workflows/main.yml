@@ -1,3 +1,34 @@
+# name: Docs
+
+# on:
+#   push:
+#     branches: [ main ]
+#     paths:
+#       - 'docs/**'
+#       - 'mkdocs.yml'
+#       - '.github/workflows/main.yml'
+
+#   # Allows you to run this workflow manually from the Actions tab
+#   workflow_dispatch:
+
+# permissions:
+#   contents: write
+
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v3
+
+#       - name: Set up Python 3
+#         uses: actions/setup-python@v4
+#         with:
+#           python-version: "3.10"
+
+#       - run: pip install mkdocs-material mkdocs-table-reader-plugin
+#       - run: mkdocs gh-deploy --force
+
 name: Docs
 
 on:
@@ -7,9 +38,10 @@ on:
       - 'docs/**'
       - 'mkdocs.yml'
       - '.github/workflows/main.yml'
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+  # Optional: Check for CV updates daily
+  schedule:
+    - cron: '0 0 * * *'  # Daily at midnight UTC
 
 permissions:
   contents: write
@@ -21,10 +53,40 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Checkout CV repository
+        uses: actions/checkout@v3
+        with:
+          repository: laurenwilner/cv
+          path: cv-source
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Set up Python 3
         uses: actions/setup-python@v4
         with:
           python-version: "3.10"
 
-      - run: pip install mkdocs-material mkdocs-table-reader-plugin
-      - run: mkdocs gh-deploy --force
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-latex-base texlive-latex-extra texlive-fonts-recommended
+
+      - name: Compile CV
+        run: |
+          cd cv-source
+          # Find and compile the main .tex file
+          MAIN_TEX=$(find . -name "*.tex" -type f | head -n 1)
+          if [ -n "$MAIN_TEX" ]; then
+            pdflatex -interaction=nonstopmode "$MAIN_TEX" || true
+            pdflatex -interaction=nonstopmode "$MAIN_TEX" || true  # Run twice for references
+            # Copy the compiled PDF
+            PDF_NAME=$(basename "$MAIN_TEX" .tex).pdf
+            if [ -f "$PDF_NAME" ]; then
+              cp "$PDF_NAME" ../docs/_artifacts/wilner_cv.pdf
+            fi
+          fi
+
+      - name: Install MkDocs dependencies
+        run: pip install mkdocs-material mkdocs-table-reader-plugin
+
+      - name: Deploy to GitHub Pages
+        run: mkdocs gh-deploy --force
