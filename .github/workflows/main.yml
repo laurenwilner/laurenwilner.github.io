@@ -68,7 +68,7 @@ jobs:
       - name: Install LaTeX
         run: |
           sudo apt-get update
-          sudo apt-get install -y texlive-latex-base texlive-latex-extra texlive-fonts-recommended
+          sudo apt-get install -y texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-bibtex-extra biber
 
       - name: Compile CV
         run: |
@@ -84,9 +84,15 @@ jobs:
             exit 1
           fi
           echo "Found main .tex file: $MAIN_TEX"
-          # Compile (remove || true to see actual errors)
+          # Compile LaTeX (first pass)
           pdflatex -interaction=nonstopmode "$MAIN_TEX"
-          pdflatex -interaction=nonstopmode "$MAIN_TEX"  # Run twice for references
+          # Run biber to process bibliography
+          BIB_NAME=$(basename "$MAIN_TEX" .tex)
+          biber "$BIB_NAME"
+          # Compile again (second pass for bibliography)
+          pdflatex -interaction=nonstopmode "$MAIN_TEX"
+          # Compile one more time (third pass to resolve all references)
+          pdflatex -interaction=nonstopmode "$MAIN_TEX"
           # Copy the compiled PDF
           PDF_NAME=$(basename "$MAIN_TEX" .tex).pdf
           echo "Looking for PDF: $PDF_NAME"
