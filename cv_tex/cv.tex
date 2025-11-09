@@ -1,0 +1,480 @@
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+\setlength{\leftmargin}{0.5em}
+\setlength{\itemindent}{0.5em}
+\setlength{\itemsep}{1pt}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+\usepackage[
+    backend=biber,
+    style=numeric,
+    sorting=ynt,  % Changed from 'ym' to 'ynt' for year, name, title sorting
+    sortlocale=en_US,
+    maxbibnames=20,
+    minbibnames=1,
+    url=false,
+    urldate=false
+]{biblatex}
+\addbibresource{references.bib}
+\setlength\bibitemsep{1em}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+% job listing environments
+\newenvironment{jobshort}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \end{tabularx}
+    }
+    {
+    }
+
+\newenvironment{joblong}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \end{tabularx}
+    \begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
+    }
+    {
+    \end{itemize}
+    \end{minipage}    
+    }
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Lauren BlTESTair Wilner} \\[7.5pt]
+\normalsize
+\href{https://github.com/laurenwilner}{\raisebox{-0.05\height}\faGithub\ laurenwilner} \ $|$ \ 
+\href{https://www.linkedin.com/in/lauren-blair-wilner/}{\raisebox{-0.05\height}\faLinkedin\ lauren-blair-wilner} \ $|$ \ 
+\href{https://laurenwilner.github.io/}{\raisebox{-0.05\height}\faGlobe \ laurenwilner.github.io} $|$ \\
+\href{mailto:wilnerl@uw.edu}{\raisebox{-0.05\height}\faEnvelope \ wilnerl@uw.edu} \ $|$ \ 
+\href{tel:+631.807.8635}{\raisebox{-0.05\height}\faMobile \ +1.631.807.8635} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+
+2010 - 2014 & \textbf{BA, International Relations, Community Health, Studio Art}, Tufts University \\
+
+2014 - 2015 & \textbf{Master's in Public Health, Epidemiology and Biostatistics}, Tufts University School of Medicine \\
+ & \textbf{Thesis:} Sustained use in a relief-to-recovery household water chlorination program in Haiti: comparing external evaluation findings with internal supervisor and community health worker monitoring data \\
+ & \textbf{Mentor:} Dr. Daniele Lantagne \\
+
+2022 - present & \textbf{PhD, Epidemiology}, University of Washington \\
+ & \textbf{Thesis:} Assessing the impact of floods and federal policies on older adult mortality: leveraging Bayesian, quasi-experimental, and agent-based modeling techniques \\
+ & \textbf{Mentor:} Dr. Joan Casey \\[10pt]
+
+\end{tabularx}
+
+% \section{Education}
+% \begin{tabularx}{\linewidth}{X r@{}}	
+% \textbf{BA, International Relations, Community Health, Studio Art}, Tufts University & 2010 - 2014 \\
+% \textbf{Master's in Public Health, Epidemiology and Biostatistics}, Tufts University School of Medicine & 2014 - 2015 \\
+% \textbf{Thesis:} Sustained use in a relief-to-recovery household water chlorination program in Haiti: comparing external evaluation findings with internal supervisor and community health worker monitoring data & \\
+% \textbf{Mentor:} Dr. Daniele Lantagne & \\
+% \textbf{PhD, Epidemiology}, University of Washington & 2022 - present \\
+% \textbf{Thesis:} Assessing the impact of floods and federal policies on older adult mortality: leveraging Bayesian, quasi-experimental, and agent-based modeling techniques & \\
+% \textbf{Mentor:} Dr. Joan Casey & \\[10pt]
+% \end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	EXPERIENCE
+%----------------------------------------------------------------------------------------
+\section{Work Experience}
+
+\begin{jobshort}{Research Assistant}{2023 - present}
+    \textit{University of Washington, Seattle WA} \\
+    \textit{Department of Environmental and Occupational Health Sciences} \\
+\parbox[t]{\linewidth}{\leftskip=0.25cm
+\begin{itemize}[label=--]
+    \item Research assistant with Dr. Joan Casey leading projects on climate change and health, working with collaborators in various industries and across different universities. Collaborating on projects on wildfires, power outages, extreme heat, and climate disasters and their impacts on human health.
+\end{itemize}
+}
+\end{jobshort}
+
+\begin{jobshort}{Research Assistant}{2025}
+    \textit{University of Washington, Seattle WA} \\
+    \textit{Center for Studies in Demography and Ecology} \\
+\parbox[t]{\linewidth}{\leftskip=0.25cm
+\begin{itemize}[label=--]
+    \item Research assistant with Drs. Sara Curran and Ann Bosworth leading research on the Federal Emergency Management Agency (FEMA) programs and procedures as they relate to climate disaster preparedness and response, with a particular focus on their impacts on health.
+\end{itemize}
+}
+\end{jobshort}
+
+\begin{jobshort}{Research Assistant}{2022 - 2024}
+    \textit{University of Washington, Seattle WA} \\
+    \textit{Department of Epidemiology} \\
+\parbox[t]{\linewidth}{\leftskip=0.25cm
+\begin{itemize}[label=--]
+    \item Research assistant with Professor Steve Mooney leading various research projects surrounding built environment and health, including studies on physical activity, traffic safety, and data privacy practices. Developed an R package now hosted on CRAN and have led the analyses, reports, and presentations for three different projects.
+\end{itemize}
+    }
+\end{jobshort}
+
+\begin{jobshort}{Research scientist, disease expenditures (DEX) project}{2022-2023}
+    \textit{University of Washington, Seattle WA} \\
+    \textit{Institute for Health Metrics and Evaluation (IHME)}
+    \begin{itemize}[label=--]
+        \item Statistical modeler for the Disease Expenditure (DEX) team. Led the Skilled Nursing Facility and Dental care envelope estimation.
+    \end{itemize}
+    
+\textbf{Managing research scientist, Global Burden of Disease (GBD)} \hfill 2022 \\
+\textbf{Research scientist, Global Burden of Disease (GBD)} \hfill 2019-2022 \\
+\textbf{Researcher, Global Burden of Disease (GBD)} \hfill 2017-2019 \\
+    \textit{University of Washington, Seattle WA} \\
+    \textit{Institute for Health Metrics and Evaluation (IHME)}
+
+    \begin{itemize}[label=--]
+        \item Statistical modeler for all congenital birth defects for the Global Burden of Disease (GBD) study.
+        \item Reviewed articles from systematic literature reviews and extracted data. Formatted, transformed, reviewed, and assessed data sources to determine their relevance and utility for ongoing analysis; Developed and managed large datasets to be used in epidemiological and statistical analyses via a cluster computing system.
+        \item Ran and interpreted results from advanced statistical models including: ensemble models testing all combinations of covariates to maximize out-of-sample predictive validity, Bayesian hierarchical meta-regression models estimating the prevalence and incidence, and other novel meta-regression tools.
+        \item Designed and ran entire modeling pipeline from data processing to statistical modeling to design/generation of diagnostic tables and figures, primarily in both R and Python.
+        \item Led a team of researchers and data professionals modeling birth defects, blood disorders, and cerebral palsy; Led and co-lead peer-reviewed publications; presented at internal and external meetings and conferences.
+    \end{itemize}
+\end{jobshort}
+
+\begin{jobshort}{ASPPH/CDC Allan Rosenfield Global Health Fellow}{2015 - 2017}
+    \textit{Centers for Disease Control and Prevention (CDC)} \\
+    \textit{Division of Global Health Protection/Center for Global Health (DGHP/CGH)} \\
+    \textit{Field Epidemiology Training Programs (FETP)}
+\begin{itemize}[label=--]
+    \item Assistant program manager for FETP (FETPs are Ministry of Health -- CDC partnerships globally to establish epidemiology training programs for host country doctors and public health professionals.) implementation across Francophone West Africa (approximately 75\% travel to countries in the region); acting Public Health Advisor for implementation of FETP Senegal.
+    \item Provided technical support for FETP implementation in Zika-affected countries of Central/South America.
+    \item Assisted with conducting monitoring and evaluation of FETPs worldwide.
+\end{itemize}
+\end{jobshort}
+
+\begin{jobshort}{Data Analyst}{2014 - 2017}
+    \textit{International Nutrition Foundation (INF) TRUMF Ghana Study} \\
+\parbox[t]{\linewidth}{\leftskip=0.25cm
+\begin{itemize}
+    \item Performed statistical analysis for USAID-funded field
+\end{itemize} study at Friedman School of Nutrition.}
+\end{jobshort}
+
+\begin{jobshort}{Data Analyst/GIS Specialist}{2014-2015}
+\textbf{Research Assistant/Intern}\hfill 2013 - 2014 \\
+    \textit{Food Aid Quality Review (FAQR) Study}
+        \begin{itemize}[label=--]
+            \item Co-created data collection instruments and templates for USAID-funded field studies in Malawi, Sierra Leone, and Burkina Faso on effectiveness and cost-effectiveness of supplementary feeding programs.
+            \item Led and performed all required literature reviews and statistical and GIS analyses for three FAQR field studies; prepared methods and results for manuscripts and presentations.
+        \end{itemize}
+\end{jobshort}
+
+
+\begin{jobshort}{Mobile Health Education Intern}{2015 - 2017}
+    \textit{Rubenstein Ecosystems Science Laboratory}
+% \\ \parbox[t]{\linewidth}{\leftskip=0.25cm
+% Performed a literature review of best practices in community mental health programs using ICT4D for mobile education in post-conflict or humanitarian emergency settings.}
+\end{jobshort}
+
+\begin{jobshort}{Research Assistant/Data Analyst}{2014 - 2015}
+    \textit{Harvard Business School Zambian Water Project}
+% \\ \parbox[t]{\linewidth}{\leftskip=0.25cm
+% Assisted with data extraction and cleaning for data from Zambian Ministry of Health and Ministry of Education, in addition to preparing data for analysis at Harvard Business School and the National Bureau of Economics Research.}
+\end{jobshort}
+
+\begin{jobshort}{Field Human Resources Intern}{2013}
+    \textit{Doctors without Borders (MSF)}
+% \\ \parbox[t]{\linewidth}{\leftskip=0.25cm
+% Processed, reviewed, and evaluated incoming applications for MSF field workers and prepared briefings, training materials, and logistics for field worker missions, and conducted training sessions for all field staff members.}
+\end{jobshort}
+
+\begin{jobshort}{Consulting Intern}{2013}
+    \textit{Partners Senegal}
+% \\ \parbox[t]{\linewidth}{\leftskip=0.25cm
+% Partners Senegal is a branch of Partners for Democratic Change, a global organization working to develop change, conflict management, and empowerment of individuals in government. Led research on children's health and the role of the Senegalese security sector to protect health. Wrote a policy proposal for Senegalese government regarding the role of the police and related armed forces in protecting children's rights to health and mental health.}
+\end{jobshort}
+
+\begin{jobshort}{Administrative Intern}{2012}
+    \textit{Village Health Works (VHW)}
+% \\ \parbox[t]{\linewidth}{\leftskip=0.25cm
+% Developed correspondence and coordinated logistics on behalf of VHW with donors and staff in Burundi and co-authored a student handbook for the launch of the partnership between American universities and VHW.}
+\end{jobshort}
+
+\begin{jobshort}{Grants \& Research Manager}{2012 - 2017}
+    \textit{Zimbabwe Orphans Fund (ZOF)}
+% \\ \parbox[t]{\linewidth}{\leftskip=0.25cm
+% ZOF Africa is a non-profit organization working with orphaned youth in Zimbabwe to provide technical training and educational programming. As a member of the founding ZOF team, I researched and outlined strategic plans for projects at Emerald Hill Children's Home in Zimbabwe. I also coordinated and wrote grant applications.}
+\end{jobshort}
+
+\begin{jobshort}{Research Assistant}{2011 - 2014}
+    \textit{Tufts University, Medford MA} \\
+    \textit{Global Development and Environment Institute (GDAE)}
+% \\ \parbox[t]{\linewidth}{\leftskip=0.25cm
+% GDAE is a research institute at Tufts University that combines research and curricular development at The Fletcher School of Law and Diplomacy, with a focus on the relationship between development and the environment. Composed, edited, and formatted three textbooks currently in publication, and conducted research for the Social Science Library project, which distributes educational materials worldwide.}
+\end{jobshort}
+
+\begin{jobshort}{Intern}{2011}
+    \textit{Humanity in Action (HIA)}
+% \\ \parbox[t]{\linewidth}{\leftskip=0.25cm
+% Led research/review of HIA Fellows' projects and assisted with the launch of a new website.}
+\end{jobshort}
+
+% \underline{\textbf{Short-term consulting}}\\
+% Wrote web-scraping tool to pull available dates of Google Street View Imagery for \~35,000 locations in New York City for a study evaluating Project Zero. Columbia University, April 2025.
+
+%----------------------------------------------------------------------------------------
+%	HONORS, AWARDS, SCHOLARSHIPS
+%----------------------------------------------------------------------------------------
+\section{Honors, awards, and scholarships}
+
+\textbf{Graduate Student Conference Presentation Award} \hfill 2025 \\
+\textit{University of Washington Graduate School} \\
+\parbox[t]{\linewidth}{\leftskip=0.25cm
+Selected to receive a travel award to present at the International Society for Environmental Epidemiology (ISEE) annual conference in Atlanta, GA.}
+
+\textbf{ARCS Scholar} \hfill 2022-2025 \\
+\textit{Achievement Rewards for College Scientists (ARCS) Foundation Seattle Chapter} \\
+\parbox[t]{\linewidth}{\leftskip=0.25cm
+Selected to be a scholar in the ARCS fellowship program based on academic achievement.}
+
+\textbf{UW Top Scholar Award} \hfill 2022-2025 \\
+\textit{University of Washington Graduate School} \\
+\parbox[t]{\linewidth}{\leftskip=0.25cm
+Awarded doctoral funding as a top prospective student.}
+
+\textbf{Dean's list} \hfill 2010-2014 \\
+\textit{Tufts University} 
+
+\textbf{Cum Laude} \hfill 2014 \\
+\textit{Tufts University} 
+
+
+
+%----------------------------------------------------------------------------------------
+%	PROFESSIONAL ACTIVITIES
+%----------------------------------------------------------------------------------------
+\section{Professional activities}
+
+\underline{Society memberships} \\
+\textbf{Member, American Geophysical Union} \hfill 2025\\
+\textbf{Member, International Society for Environmental Epidemiology} \hfill 2023 - present \\
+\textbf{Member, Society for Epidemiologic Research} \hfill 2022 - present \\
+\textbf{Member, American Public Health Association} \hfill 2015 - 2017 \\ 
+
+\underline{Peer review} \\ 
+\textbf{Nature} \hfill 2025 \\
+\textbf{Environmental Health Perspectives} \hfill 2025 \\
+
+\underline{Professional development} \\
+\textbf{Introduction to Bayesian Statistics: Likelihoods, Priors \& Posteriors } \hfill 2024 \\
+    \parbox[t]{\linewidth}{\leftskip=0.25cm
+    \textit{University of Washington}} \\
+\textbf{Agent Based Modeling in R} \hfill 2024 \\
+    \parbox[t]{\linewidth}{\leftskip=0.25cm
+    \textit{University of Washington}} \\ 
+\textbf{Using Text as Data} \hfill 2025 \\
+    \parbox[t]{\linewidth}{\leftskip=0.25cm
+    \textit{University of Washington}} \\
+
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+\section{Publications}
+\begin{refsection}[references.bib]
+\nocite{*}
+\printbibliography[title=none,heading=none]
+% \printbibliography
+\end{refsection}
+
+%----------------------------------------------------------------------------------------
+%	MANUSCRIPTS IN PREPARATION
+%----------------------------------------------------------------------------------------
+% \section{Manuscripts in preparation}
+% to add as needed! 
+
+%----------------------------------------------------------------------------------------
+%	FUNDING HISTORY
+%----------------------------------------------------------------------------------------
+\section{Funding history}
+\textbf{Assessing the impact of floods and federal policies on older adult mortality: leveraging Bayesian, quasi-experimental, and agent-based modeling techniques} \\
+Role on Project: Principal Investigator \\
+Dates: September 2025 - August 2027 \\ 
+Funding Agency: NIH/NIA F31-AG094267 \\
+Funding: \$99,076 direct costs \\ 
+Description: The overarching goal of this training award is to use novel methods to first assess whether FEMA programs buffer against flood-related mortality and then evaluate the short- and long-term mortality impacts of floods in the US.
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATIONS
+%----------------------------------------------------------------------------------------
+\section{Conference presentations and posters}
+\textbf{Wilner LB}, McBrien H, Flores N, Casey JA. PopExp: An open-source Python package to quickly and efficiently estimate populations exposed to environmental hazards. \textit{International Society for Environmental Epidemiology (ISEE).} Atlanta, GA \hfill 2025
+
+\textbf{Wilner LB}, Dieleman JL, Casey JA. The National Flood Insurance Program (NFIP): spatial distribution of who can be covered and who is covered across the United States. \textit{Society for Epidemiologic Research (SER)}. Boston, MA \hfill 2025
+
+\textbf{Wilner LB}, Jones-Ngo C, Benmahrnia T, Casey JA. Dual exposure to power outages and wildfire PM$_{2.5}$ in California among vulnerable populations. \textit{The Workshop in Environmental Economics and Data Science (TWEEDS)}. Portland, OR  \hfill 2025
+
+\textbf{Wilner LB}, Dieleman JL, Casey JA. The National Flood Insurance Program (NFIP): spatial distribution of designations, policies, and claims across the United States. \textit{Cascadia Annual Symposium on  Environmental Occupational and Population health}. Blaine, WA \hfill 2025
+
+\textbf{Wilner LB}, Jones-Ngo C, Benmahrnia T, Casey JA. Dual exposure to power outages and wildfire PM$_{2.5}$ in California among vulnerable populations. \textit{International Society for Environmental Epidemiology (ISEE).} Santiago, Chile \hfill 2024
+
+\textbf{Wilner LB}, Zhou W, Youngbloom A, Mooney SJ. A shift in data sharing paradigms: a case study of the ways in which big data and complex algorithms allow for increased data sharing while preserving privacy. \textit{Society for Epidemiologic Research (SER)} Portland, OR \hfill 2023
+
+\textbf{Wilner LB}, Kassebaum NJ. Global, Regional, and National Levels and Trends in Congenital Birth Defects, 1990-2019. \textit{International Conference on Birth Defects and Disabilities.} Colombo, Sri Lanka \hfill 2020
+
+\textbf{Wilner LB}, Suri DJ, Langlois B, Walton S, and Rogers BL. Effective delivery of social-behavioral change communication through a care group model in a supplementary feeding program: A descriptive analysis. \textit{Experimental Biology} Chicago, IL \hfill 2017 
+
+\textbf{Wilner LB}, Passarelli S, Suri DJ, Maganga G, Langlois B, Marcus S, Chui KKH, Boiteau JM, Rosenberg I, Webb P, and Rogers BL. The Price of Oil: Assessing Behavior Change Communication \& Increased Oil Ration on improving Oil Use in Food Aid Preparation for Children Malawi. \textit{Experimental Biology} Boston, MA \hfill 2015
+
+%----------------------------------------------------------------------------------------
+%	SOFTWARE
+%----------------------------------------------------------------------------------------
+\section{Software}
+\texttt{walkboutr}\\ R: The goal of \href{https://rwalkbout.github.io/walkboutr/}{\texttt{walkboutr}} is to process GPS and accelerometry data into walking bouts. 
+\\
+
+\texttt{popexposure} \\ Python: \href{https://heathermcb.github.io/popexposure/}{\texttt{popexposure}} is an open-source Python package providing fast, memory-efficient, and consistent estimates of the number of people living near environmental hazards. 
+
+
+
+%----------------------------------------------------------------------------------------
+%	TEACHING HISTORY
+%----------------------------------------------------------------------------------------
+\section{Teaching history}
+
+\underline{Workshops}\\
+\begin{enumerate}
+    \item Dr. Joan Casey's research lab at University of Washington, Workshop Instructor, “Git and GitHub for Public Health.” November 2025. Seattle, WA
+    \item Dr. Joan Casey's research lab at University of Washington, Workshop Instructor, “Git and GitHub for Public Health.” September 2024. Seattle, WA 
+    \item Dr. Tarik Benmahrnia's research lab at University of California San Diego, Workshop Instructor, “Git and GitHub for Public Health.” April 2025. Virtual
+    \item Society for Epidemiologic Research, Workshop Co-Instructor, “Git and GitHub for Public Health.” June 10, 2025. Boston, MA
+    \item Society for Epidemiologic Research, Workshop Co-Instructor, “Git and GitHub for Public Health.” June 18, 2024. Austin, TX
+    \item California Department of Public Health, Workshop Co-Instructor, “Git and GitHub for Public Health.” May 3, 2025. Sacramento, CA
+\end{enumerate}
+
+
+\underline{Teaching Assistant Positions}\\
+\begin{enumerate}
+\item SHARP Bootcamp (2-day short course)—Environmental Justice Boot Camp: Theory and Methods to Study Environmental Health Disparities, Teaching Assistant. August 12-13, 2025. Virtual.
+    \parbox[t]{\linewidth}{\leftskip=0.25cm
+    \textit{Facilitated discussion and co-led lab}}
+\item EPI 560: Data Management for Public Health, Teaching Assistant. Spring 2024.  University of Washington, Seattle, WA.\\
+    \parbox[t]{\linewidth}{\leftskip=0.25cm
+    \textit{Co-led 20 labs lasting 110 minutes for 15 person course; provided written feedback and graded all labs}}
+\item EPI 560: Data Management for Public Health, Teaching Assistant. Winter 2024. University of Washington, Seattle, WA.\\
+    \parbox[t]{\linewidth}{\leftskip=0.25cm
+    \textit{Developed course and lab materials for lab-based class}}
+\item TA Principles of Biostatistics. Fall 2014. Tufts University School of Medicine, Boston, MA\\
+    \parbox[t]{\linewidth}{\leftskip=0.25cm
+    \textit{Led labs; graded all labs}}
+\item TA Principles of Biostatistics Tufts. Spring 2015. Tufts University School of Medicine, Boston, MA\\
+    \parbox[t]{\linewidth}{\leftskip=0.25cm
+    \textit{Led labs; graded all labs}}
+\item TA Intro to SAS Programming Tufts. Spring 2015. Tufts University School of Medicine, Boston, MA\\
+    \parbox[t]{\linewidth}{\leftskip=0.25cm
+    \textit{Led labs; graded all labs}}
+\end{enumerate}
+
+
+%----------------------------------------------------------------------------------------
+%	STATISTICAL, CODING, AND OTHER SKILLS
+%----------------------------------------------------------------------------------------
+\section{Technical and language skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+\textbf{Proficient} &  \normalsize{R, SQL, Git, GitHub, $\LaTeX$, French (fluent)}\\
+\textbf{Competent}  &  \normalsize{Python, Stata, ArcGIS}\\  
+\textbf{Familiar}  &  \normalsize{HTML, SAS}\\  
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	SERVICE
+%----------------------------------------------------------------------------------------
+\section{Service}
+\textbf{UW Department of Epidemiology Peer Mentor Program} \hfill 2023 - present\\
+\parbox[t]{\linewidth}{\leftskip=0.25cm \textit{Peer mentor}} 
+
+\textbf{UW Department of Epidemiology Curriculum Committee} \hfill 2023 - 2024\\
+\parbox[t]{\linewidth}{\leftskip=0.25cm \textit{Student representative}}
+
+\textbf{IHME Staff Feedback Improvement Group} \hfill 2019\\
+\parbox[t]{\linewidth}{\leftskip=0.25cm \textit{Researcher representative}}
+
+
+\vfill
+\center{\footnotesize Last updated: \today}
+
+\end{document}

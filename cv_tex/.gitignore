@@ -1,0 +1,16 @@
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.bcf
+*.log
+*.out
+*.run.xml
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+
+# PDF (optional - uncomment if you don't want to track the compiled PDF)
+# *.pdf
+
