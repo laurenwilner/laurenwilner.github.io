@@ -1,0 +1,40 @@
+:root {
+  --md-primary-fg-color: #445626;
+  --md-primary-fg-color--light: #5a6f33;
+  --md-primary-fg-color--dark: #2d3819;
+  --md-accent-fg-color: #445626;
+  --md-accent-fg-color--transparent: rgba(68, 86, 38, 0.1);
+}
+
+[data-md-color-primary="custom"] {
+  --md-primary-fg-color: #445626;
+  --md-primary-fg-color--light: #5a6f33;
+  --md-primary-fg-color--dark: #2d3819;
+  --md-accent-fg-color: #445626;
+}
+
+/* Override Material theme colors */
+.md-header {
+  background-color: #445626;
+}
+
+.md-tabs {
+  background-color: #445626;
+}
+
+.md-nav__link--active {
+  color: #445626;
+}
+
+.md-nav__link:hover {
+  color: #445626;
+}
+
+a {
+  color: #7a9665;
+}
+
+a:hover {
+  color: #445626;
+}
+

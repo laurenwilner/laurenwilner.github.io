@@ -2,13 +2,7 @@ site_name: Lauren Blair Wilner
 nav:
   - Home: index.md
   - CV: CV/cv.md
-  - Presentations:
-      - Cascadia 2025: presentations/cascadia_2025.md
-      - International Society for Environmental Epidemiology (ISEE) 2024: presentations/isee_2024.md      
-      - Society for Epidemiologic Research (SER) 2023: presentations/ser_2023.md
-      - International Conference on Birth Defects and Disabilities in the Developing World (ICBD) 2020: presentations/icbd_2020.md
-      - Experimental Biology (EB) 2017: presentations/eb_2017.md
-      - Experimental Biology (EB) 2015: presentations/eb_2015.md
+  - Presentations: presentations/index.md
   - Software Packages:
       - walkboutr: packages/walkboutr.md
       - Pop_Exp: packages/pop_exp.md
@@ -18,9 +12,26 @@ nav:
       - Workshops: teaching/workshops.md
 theme:
   name: material
+  palette:
+    # Light mode
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
   features:
     - content.code.copy
     - toc.integrate
+extra_css:
+  - _stylesheets/custom.css
 markdown_extensions:
   - abbr
   - admonition
@@ -33,9 +44,7 @@ markdown_extensions:
   - pymdownx.critic
   - pymdownx.caret
   - pymdownx.details
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg 
+  - pymdownx.emoji 
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span

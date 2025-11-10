@@ -1,17 +1,52 @@
-**Principles of Biostatistics**
+**SHARP Bootcamp (2-day short course)—Environmental Justice Boot Camp: Theory and Methods to Study Environmental Health Disparities**
+Teaching Assistant, August 12-13, 2025
 
-Tufts University School of Medicine, Boston, MA.
-Graduate level, Teaching Assistant
-2014-2015
-
-Developed course materials and taught Stata lab sections for all MPH and DrPH Biostatistics students with Dr. David Tybor.
+Facilitated discussion and co-led lab
 
 <br/>
 
-**Data Management for Public Health**
+**EPI 560: Data Management for Public Health**
 
-University of Washington School of Public Health 
-Department of Epidemiology 
-Graduate level, Teaching Assistant 
+University of Washington, Seattle, WA.
+Teaching Assistant, Spring 2024
 
-Developed data management and data science for public health course and course materials with Dr. Steve Mooney for the first iteration of this course. Together we curated the curriculum for this course. I designed and co-taught the labs for each session and was the teaching assistant for the first iteration of this course.
+Co-led 20 labs lasting 110 minutes for 15 person course; provided written feedback and graded all labs
+
+<br/>
+
+**EPI 560: Data Management for Public Health**
+
+University of Washington, Seattle, WA.
+Teaching Assistant, Winter 2024
+
+Developed course and lab materials for lab-based class
+
+<br/>
+
+**Principles of Biostatistics**
+
+Tufts University School of Medicine, Boston, MA.
+TA, Fall 2014
+
+Led labs; graded all labs
+
+<br/>
+
+**Principles of Biostatistics**
+
+Tufts University School of Medicine, Boston, MA.
+TA, Spring 2015
+
+Led labs; graded all labs
+
+<br/>
+
+**Intro to SAS Programming**
+
+Tufts University School of Medicine, Boston, MA.
+TA, Spring 2015
+
+Led labs; graded all labs
+
+<br/>
+
