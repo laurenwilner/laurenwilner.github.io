@@ -1,5 +1,6 @@
-# Pop_Exp
+# popexposure
 Contributer. 
 
-- [Repository](https://github.com/heathermcb/Pop_Exp)
-- [PyPi page](https://pypi.org/project/Pop_Exp/)
+- [Documentation](https://heathermcb.github.io/popexposure/)
+- [Repository](https://github.com/heathermcb/popexposure)
+- [PyPi page](https://pypi.org/project/popexposure/)

@@ -1,4 +1,4 @@
-**Git and GitHub for Public Health**
+<h2>Git and GitHub for Public Health</h2>
 
 *Co-developed with Dr. Corinne Riddell (UC Berkeley)*
 <br/> 
@@ -18,7 +18,7 @@ Open source materials for this workshop can be found [here](https://git-for-publ
 
 <br/>
 
-Workshop Description:
+**Workshop Description:**
 
 Version control, the practice of tracking and managing changes to statistical code, is essential for reducing errors in a statistical analysis. However, many epidemiologists are not trained to do this and are unsure how it fits with institutional review board (IRB) protocols and privacy standards. In this workshop, we will provide an introduction to git and GitHub, aiming to equip epidemiologists with version control tools that also meet ethical standards.
 

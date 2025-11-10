@@ -5,7 +5,7 @@ nav:
   - Presentations: presentations/index.md
   - Software Packages:
       - walkboutr: packages/walkboutr.md
-      - Pop_Exp: packages/pop_exp.md
+      - popexposure: packages/pop_exp.md
   - Publications: publications/publications.md
   - Teaching: 
       - Courses: teaching/courses.md

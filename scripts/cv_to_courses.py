@@ -156,42 +156,52 @@ def extract_courses(cv_path: Path) -> List[Dict[str, str]]:
     return courses
 
 def format_courses_markdown(courses: List[Dict[str, str]]) -> str:
-    """Format courses as markdown."""
+    """Format courses as markdown matching presentations format."""
     if not courses:
         return ""
     
-    lines = []
+    # Start with CSS style matching presentations
+    content = "<style>\n"
+    content += ".presentation-item { margin-bottom: 1rem; font-size: 0.9em; }\n"
+    content += ".presentation-item h2 { font-size: 1.1em; margin-top: 1.5rem; margin-bottom: 0.5rem; }\n"
+    content += ".presentation-item p { margin: 0.25rem 0; }\n"
+    content += "</style>\n\n"
+    
+    # Format each course entry
     for course in courses:
-        # Format: **Course Name**
-        # Institution, Location
-        # Role, Date
-        # Description
-        lines.append(f"**{course['course']}**\n")
+        course_name = course['course']
         
+        # Build location string
         location_parts = []
         if course['institution']:
             location_parts.append(course['institution'])
         if course['location']:
             location_parts.append(course['location'])
+        location_str = ', '.join(location_parts) if location_parts else ""
         
-        if location_parts:
-            lines.append(f"\n{', '.join(location_parts)}.\n")
-        
+        # Build role/date string
         role_date_parts = []
         if course['role']:
             role_date_parts.append(course['role'])
         if course['date']:
             role_date_parts.append(course['date'])
+        role_date_str = ', '.join(role_date_parts) if role_date_parts else ""
         
-        if role_date_parts:
-            lines.append(f"{', '.join(role_date_parts)}\n")
+        content += f"<div class=\"presentation-item\">\n"
+        content += f"<h2>{course_name}</h2>\n"
+        
+        if role_date_str:
+            content += f"<p><strong>{role_date_str}</strong></p>\n"
+        
+        if location_str:
+            content += f"<p>{location_str}</p>\n"
         
         if course['description']:
-            lines.append(f"\n{course['description']}\n")
+            content += f"<p>{course['description']}</p>\n"
         
-        lines.append("\n<br/>\n\n")
+        content += "</div>\n\n"
     
-    return ''.join(lines)
+    return content
 
 def update_courses_page(courses: List[Dict[str, str]], courses_md_path: Path):
     """Update the courses.md file with the extracted courses."""
