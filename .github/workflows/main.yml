@@ -76,6 +76,26 @@ jobs:
             exit 1
           fi
 
+      - name: Generate Publications Page
+        run: |
+          python3 scripts/bibtex_to_markdown.py cv_tex/references.bib docs/publications/publications.md
+          echo "Generated publications page from BibTeX"
+
+      - name: Generate Presentations Pages
+        run: |
+          python3 scripts/cv_to_presentations.py cv_tex/cv.tex docs/presentations/
+          echo "Generated presentations pages from CV"
+
+      - name: Generate Workshops Page
+        run: |
+          python3 scripts/cv_to_workshops.py cv_tex/cv.tex docs/teaching/workshops.md
+          echo "Generated workshops page from CV"
+
+      - name: Generate Courses Page
+        run: |
+          python3 scripts/cv_to_courses.py cv_tex/cv.tex docs/teaching/courses.md
+          echo "Generated courses page from CV"
+
       - name: Install MkDocs dependencies
         run: pip install mkdocs-material mkdocs-table-reader-plugin
 
