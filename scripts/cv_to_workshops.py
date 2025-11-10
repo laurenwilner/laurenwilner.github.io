@@ -39,6 +39,13 @@ def parse_workshop_item(line: str) -> Dict[str, str]:
     # Pattern: \item Location, Role, "Title." Date. Location
     # Example: \item Dr. Joan Casey's research lab at University of Washington, Workshop Instructor, "Git and GitHub for Public Health." November 2025. Seattle, WA
     
+    # Extract title first (before cleaning) - handle UTF-8 smart quotes and regular quotes
+    # UTF-8 smart quotes: " (U+201C) and " (U+201D)
+    opening_quote = '\u201C'  # "
+    closing_quote = '\u201D'  # "
+    title_match = re.search(f'{opening_quote}(.+?){closing_quote}', line) or re.search(r'"([^"]+)"', line)
+    title = clean_latex(title_match.group(1)) if title_match else ''
+    
     cleaned = clean_latex(line)
     
     # Extract date (look for month year pattern or date pattern, including "May 3, 2025")
@@ -71,10 +78,6 @@ def parse_workshop_item(line: str) -> Dict[str, str]:
         # Try to find organization (everything before first comma or quote)
         parts = cleaned.split(',', 1)
         org = parts[0].strip() if parts else cleaned
-    
-    # Extract title (in quotes)
-    title_match = re.search(r'"([^"]+)"', cleaned)
-    title = title_match.group(1) if title_match else ''
     
     return {
         'organization': org,
@@ -164,15 +167,26 @@ def update_workshops_page(workshops: List[Dict[str, str]], workshops_md_path: Pa
     """Update the workshops.md file with the extracted workshops list."""
     if not workshops_md_path.exists():
         print(f"Warning: {workshops_md_path} not found, creating new file")
-        content = f"**Git and GitHub for Public Health**\n\n"
+        content = f"<h2>Git and GitHub for Public Health</h2>\n\n"
         content += f"*Co-developed with Dr. Corinne Riddell (UC Berkeley)*\n\n"
         content += f"This workshop has been taught at the following locations:\n\n"
         content += format_workshop_list(workshops)
+        content += "\n\n\nOpen source materials for this workshop can be found [here](https://git-for-public-health.netlify.app/).\n\n<br/>\n\n**Workshop Description:**\n\n"
+        content += "Version control, the practice of tracking and managing changes to statistical code, is essential for reducing errors in a statistical analysis. However, many epidemiologists are not trained to do this and are unsure how it fits with institutional review board (IRB) protocols and privacy standards. In this workshop, we will provide an introduction to git and GitHub, aiming to equip epidemiologists with version control tools that also meet ethical standards.\n\n"
+        content += "We will start with an overview of key concepts in version control and the installation and setup of git. Attendees will then create a GitHub repository and implement a version control workflow for projects that they work on alone. We will cover concepts such as branching, pulling, committing, and pushing. We will provide sample data and code that they will update – committing the changes locally and pushing them to the main GitHub repository.\n\n"
+        content += "We will then expand the workflow to projects done within a team. Attendees will be put into groups and practice working in a repository together. They will become familiar with the challenges that arise when working simultaneously on files, such as merge conflicts, and how to resolve these.\n\n"
+        content += "Attendees will be introduced to using git via the command line, a git client, and the R studio git pane. We will cover general tips on using git, best practices around data storage internal versus external to a repository, and an overview of how GitHub workflows can be compliant with IRB requirements.\n"
         workshops_md_path.write_text(content, encoding='utf-8')
         return
     
     # Read existing content
     content = workshops_md_path.read_text(encoding='utf-8')
+    
+    # Replace the title format from **title** to <h2>title</h2>
+    content = re.sub(r'\*\*Git and GitHub for Public Health\*\*', '<h2>Git and GitHub for Public Health</h2>', content)
+    
+    # Replace "Workshop Description:" with bold version
+    content = re.sub(r'^Workshop Description:', '**Workshop Description:**', content, flags=re.MULTILINE)
     
     # Find the section to replace (between "This workshop has been taught" and the next section)
     pattern = r'(This workshop has been taught at the following locations:\s*\n\n)(.*?)(\n\n\n)'
